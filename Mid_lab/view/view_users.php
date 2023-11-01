@@ -22,7 +22,15 @@ $users = getAllUser();
         <?php } ?>    
 		<tr>
 			<td colspan="3" align="right">
-				<a href="user_home.php">Go Home</a>
+				<a href="
+				<?php 
+					if($user['userType'] == 'admin'){
+						echo 'admin_home.php';
+						}
+						else{
+							echo 'user_home.php';
+						}
+			?>">Go Home</a>
 			</td>
 		</tr>
 	</table>			

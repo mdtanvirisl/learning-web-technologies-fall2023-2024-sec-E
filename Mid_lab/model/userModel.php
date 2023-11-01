@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once('db.php');
 
 function login($id, $password)
@@ -10,7 +10,7 @@ function login($id, $password)
     $count = mysqli_num_rows($result);
     $row = mysqli_fetch_assoc($result);
     if ($count == 1) {
-
+        session_start();
         $_SESSION['userId'] = $row['id'];
 
         $_SESSION['flag'] = "true";

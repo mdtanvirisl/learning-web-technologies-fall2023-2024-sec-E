@@ -11,6 +11,14 @@ $user = getUser($_SESSION['userId']);
 		<tr><td>ID</td><td><?php echo $user['id']?></tr>
 		<tr><td>NAME</td><td><?php echo $user['name']?></td></tr>	
 		<tr><td>USER TYPE</td><td><?php echo $user['userType']?></td></tr>
-		<tr><td colspan="2" align="right"><a href="admin_home.php">Go Home</a></td></tr>
+		<tr><td colspan="2" align="right"><a href="
+		<?php 
+		if($user['userType'] == 'admin'){
+			echo 'admin_home.php';
+			}
+			else{
+				echo 'user_home.php';
+			}
+			?>">Go Home</a></td></tr>
 	</table>			
 </center>

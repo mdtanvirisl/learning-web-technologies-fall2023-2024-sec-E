@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
         echo "Please fill up all required fields\n";
     } else {
         $user = login($id, $password);
-        if ($user['type'] == 'admin') {
+        if ($user['userType'] == 'admin') {
             header('location: ../view/admin_home.php');
         } else {
             header('location: ../view/user_home.php');

@@ -1,5 +1,5 @@
 <?php
-
+include_once("../controller/sessioncheck.php");
 require_once('../model/userModel.php');
 
 $user = getUser($_SESSION['userId']); 

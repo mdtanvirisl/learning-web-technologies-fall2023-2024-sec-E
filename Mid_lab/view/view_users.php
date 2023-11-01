@@ -1,5 +1,6 @@
 <?php
 
+include_once("../controller/sessioncheck.php");
 require_once('../model/userModel.php');
 
 $users = getAllUser(); 

@@ -1,3 +1,6 @@
+<?php
+include_once("../controller/sessioncheck.php");
+?>
 <center>
 	<h1>Welcome Bob!</h1>
 	<a href="profile.php">Profile</a>

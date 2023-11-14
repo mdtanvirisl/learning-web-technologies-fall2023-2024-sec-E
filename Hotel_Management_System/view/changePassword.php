@@ -10,17 +10,11 @@
 <body>
     <table border = "1" width=100%>
         <tr>
-            <th>
-                <img src="../image/hotel_management.jpg" alt="" width="100" height="100">
-            </th>
-            <th align = "right">
-                Logged in as <a href="">Bob</a>
-                | <a href="../controller/logout.php">Logout</a>
-            </th>
+            <?php include('header.php'); ?>
         </tr>
         <tr>
             <td>
-                <?php include('../controller/account.php'); ?>
+                <?php include('account.php'); ?>
             </td>
             <td width=80%>
                 <form method="post" action="" enctype="">

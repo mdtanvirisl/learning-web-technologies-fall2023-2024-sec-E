@@ -1,5 +1,9 @@
 <?php
     include('../controller/sessioncheck.php');
+    include('../model/userModel.php');
+    include("../controller/ReservationCheck.php");
+
+    $details = reservation();
 ?>
 <html lang="en">
 <head>
@@ -8,20 +12,33 @@
 <body>
     <table border = "1" width=100%>
         <tr>
-            <th>
-                <img src="../image/hotel_management.jpg" alt="" width="100" height="100">
-            </th>
-            <th align = "right">
-                Logged in as <a href="">Bob</a>
-                | <a href="../controller/logout.php">Logout</a>
-            </th>
+            <?php include('header.php'); ?>
         </tr>
         <tr>
             <td>
-                <?php include('../controller/account.php'); ?>
+                <?php include('account.php'); ?>
             </td>
             <td width=80%>
-                <h1>Welcome Bob</h1>
+                <table border='1' width='100%'>  
+                    <tr>
+                        <th>User Name</th>
+                        <th>Name</th>
+                        <th>Room No</th>
+                        <th>Check In</th>
+                        <th>Check Out</th>
+                        <th>Status</th>
+                    </tr>
+                    <?php   for($i=0; $i<count($details); $i++){ ?>
+                    <tr>
+                        <td><?=$details[$i]['UserName']?></td>
+                        <td><?=$details[$i]['Name']?></td>
+                        <td><?=$details[$i]['RoomNo']?></td>
+                        <td><?=$details[$i]['CheckIn']?></td>
+                        <td><?=$details[$i]['CheckOut']?></td>
+                        <td><?=$details[$i]['status']?></td>
+                    </tr>
+                <?php } ?> 
+                </table>
             </td>
         </tr>
         <tr>

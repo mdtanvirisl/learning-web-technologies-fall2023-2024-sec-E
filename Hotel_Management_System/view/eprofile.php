@@ -1,8 +1,9 @@
 <?php
     include('../controller/sessioncheck.php');
     include('../model/userModel.php');
+    include('../controller/editprofileCheck.php');
 
-    $user = getUser();
+    $user = getUser($_SESSION['user']['username']);
 ?>
 
 <html lang="en">
@@ -12,31 +13,24 @@
 <body>
     <table border = "1" width=100%>
         <tr>
-            <th>
-                <img src="../image/hotel_management.jpg" alt="" width="100" height="100">
-            </th>
-            <th align = "right">
-                Logged in as <a href="">Bob</a>
-                | <a href="../controller/logout.php">Logout</a>
-            </th>
+            <?php include('header.php'); ?>
         </tr>
         <tr>
             <td>
-                <?php include('../controller/account.php'); ?>
+                <?php include('account.php'); ?>
             </td>
             <td width=80%>
-                <fieldset>
-                    <legend>Profile</legend>
-                    Name: <input type="text" name="" value="<?=$user['GuestName']?>" /> <hr>
-                    Email:<input type="email" name="" value="" /> <hr>
-                    Gender: 
-                            <br><input type="radio" name="gender" value="" /> Male
-                            <input type="radio" name="gender" value="" /> Female
-                            <input type="radio" name="gender" value="" /> Other <hr>
-                    Date of Birth:<input type="date" name="" value="" /> <hr>
-                    <hr>
-                    <input type="submit" name="" value="Submit" />
-                </fieldset>
+                <form action="" method="post">
+                    <fieldset>
+                        <legend>Edit Profile</legend>
+                        Name: <input type="text" name="name" value="<?php echo $user['StaffName']?>" /> <p><?= $nameError ?></p> <hr>
+                        Email:<input type="email" name="email" value="<?php echo $user['StaffEmail']?>" /><hr>
+                        Phone Number:<input type="text" name="number" value="<?php echo $user['StaffNumber']?>" /><p><?= $numberError ?></p> <hr>
+                        Address:<input type="text" name="address" value="<?php echo $user['StaffAddress']?>" /> <hr>
+                        <hr>
+                        <input type="submit" name="submit" value="Submit" />
+                    </fieldset>
+                </form>
             </td>
         </tr>
         <tr>

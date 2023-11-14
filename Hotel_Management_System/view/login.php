@@ -1,3 +1,10 @@
+<?php 
+ 
+ include("../controller/logincheck.php");
+
+
+?>
+
 <html lang="en">
 
 <head>
@@ -18,11 +25,12 @@
         </tr>
         <tr>
             <td colspan = "2">
-                <form method="post" action="../controller/logincheck.php" enctype="">
+                <form method="post" action="" enctype="">
                     <fieldset>
                         <legend>LOGIN</legend>
                         User Name: <input type="text" name="username" value="" /> <br>
                         Password: <input type="password" name="password" value="" /> <br>
+                        <p><?= $error ?></p>
                         <hr>
                         <input type="checkbox" name="remember_me" id="checkbox">
                         <label for="checkbox"> Remember Me</label><br>

@@ -2,11 +2,8 @@
     include('../controller/sessioncheck.php');
     include_once("../controller/registrationCheck.php");
     include_once('../model/employeeModel.php');
-    // include_once('../controller/adminCheck.php');
 
     $employee = getAllemployee();
-    
-
 ?>
 
 
@@ -28,16 +25,22 @@
                     <fieldset align="center">
                         <legend> Add Guest </legend>
                         <input type="text" name="name" value="" placeholder="Enter Name" />
+                        <span><?= $nameError ?></span>
                         <input type="text" name="cname" value="" placeholder="Enter company Name" />
+                        <span><?= $cnameError ?></span>
                         <input type="tel" name="number" value="" placeholder="Enter Mobile Number" />
+                        <span><?= $numberError ?></span>
                         <br>
                         <input type="text" name="username" value="" placeholder="Enter Username" />
+                        <span><?= $usernameError ?></span>
                         <input type="password" name="password" value="" placeholder="Enter Password" />
-                        <input type="password" name="confirmpassword" value="" placeholder="Enter Confirm Password" />
+                        <span><?= $passwordError ?></span>
+                        <input type="password" name="confirmPassword" value="" placeholder="Enter Confirm Password" />
+                         <span><?= $confirmPasswordError ?></span> 
                         <br>
                         <hr>
                         <input type="submit" name="submit" value="Insert" />
-                        <input type="submit" name="submit" value="Update" />
+                        <input type="submit" name="update" value="Update" />
                     </fieldset>
                 </form>
 

@@ -28,7 +28,6 @@
                         Password: <input type="password" name="password" value="" /> <br>
                         <p><?= $error ?></p>
                         <hr>
-                        <input type="checkbox" name="remember_me" id="checkbox">
                         <input type="submit" name="submit" value="Submit" />
                         <a href="">Forget Password?</a>
                     </fieldset>

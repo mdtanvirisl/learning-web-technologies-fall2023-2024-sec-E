@@ -1,24 +1,4 @@
-// function ajax() {
-//     let username = document.getElementById('username').value;
-//     let std = {
-//         'username': username,
-//         'email': 'alamin@aiub.edu',
-//         'password': '123'
-//     }
-//     let data = JSON.stringify(std);
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.open('POST', 'abc.php', true);
-//     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//     xhttp.send('student=' + data)
-//     xhttp.onreadystatechange = function () {
 
-//         if (this.readyState == 4 && this.status == 200) {
-//             //alert(this.responseText);
-//             let std = JSON.parse(this.responseText);
-//             document.getElementById('head').innerHTML = std.username;
-//         }
-//     }
-// }
 function ajax() {
     let xhttp = new XMLHttpRequest();
     xhttp.open('POST', '../controller/homeCheck.php', true);
